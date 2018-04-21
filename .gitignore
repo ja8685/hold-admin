@@ -1,18 +1,15 @@
 # Build and Release Folders
-bin/
-bin-debug/
-bin-release/
-[Oo]bj/ # FlashDevelop obj
-[Bb]in/ # FlashDevelop bin
+adm_bubon/$adm/images
+bonsa/$adm/images
+jisa/$adm/images
+chongpan/$adm/images
+shop/$adm/images
 
-# Other files and folders
-.settings/
 
 # Executables
-*.swf
-*.air
-*.ipa
-*.apk
+*.gif
+*.jpg
+*.png
 
 # Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
 # should NOT be excluded as they contain compiler settings and other important
