@@ -1,0 +1,3 @@
+﻿<%
+Server.Transfer("../install.asp")
+%>

@@ -1,0 +1,36 @@
+<script language=javascript> 
+if(ie || n) {
+document.write('<div id="PageLoad" align=center style="position:absolute;width:100%;height:100%;top:100;left:0;background-color:#FFFFFF;text-align:center; z-index:5">');
+document.write("<span id=\"progress\" align=\"center\" class=\"hide\">");
+document.write("<table width=100% height=100% border=0 cellpadding=0 cellspacing=1>");
+document.write("<tr>");
+document.write("<td align=center valign=center>");
+document.write("<FONT SIZE=4 COLOR=red><B>정산처리중입니다. 잠시만 기다려 주세요.</B></FONT>");
+document.write("</td>");
+document.write("</tr>");
+document.write("<tr>");
+document.write("<td align=center valign=center>");
+document.write("<FORM name=dialog>");
+document.write("<table height=35 border=0 cellpadding=0 cellspacing=1 bgcolor=\"#FFFFFF\">");
+document.write("<TR height=20><TD><input type=text class=input name=\"bar\" size=\"" + _progressWidth/2 + "\"");
+
+if(document.all) 
+	document.write(" style=\"color:#6699CC;\">");
+else 
+	document.write(">");
+	document.write("</TD></TR>");
+	document.write("</TABLE>");
+	document.write("</FORM>");
+	document.write("</td>");
+	document.write("</tr>");
+	document.write("</table>");
+	document.write("</span>");
+	document.write("</div>");
+	ProgressDestroy(); 
+}
+</script>
+<script>
+<!-- 
+CallJS('Demo()');
+// -->
+</script> 

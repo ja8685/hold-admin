@@ -1,0 +1,34 @@
+<!--METADATA TYPE="typelib" NAME="ADODB Type Library" UUID="00000205-0000-0010-8000-00AA006D2EA4" -->
+<OBJECT RUNAT="Server" PROGID="ADODB.Connection" ID="DBconn"></OBJECT>
+<OBJECT RUNAT="Server" PROGID="ADODB.RecordSet" ID="Rs"></OBJECT>
+<%
+	'RecordSet Column,Row 구분자
+	Const ColDel="；"
+	Const RowDel="¶"
+
+	'DB 연결여부변수. CloseDB 에서 DB연결이 되었는지 확인하기 위해 사용.
+	Dim blnconnectionDB
+
+	blnconnectionDB = false
+
+	DBconn.CommandTimeOut = 60 'DB연결시간 설정(초단위)
+
+	Sub connectionDB(Database)
+		if blnconnectionDB = false then
+			'DBconn.open "Provider=SQLOLEDB;Data Source=localhost;Initial Catalog="  & DataBase & ";user ID=AXUsrWeb;password=AXUsrWeb#123AX0601gs;"
+			'DBconn.open "Provider=SQLOLEDB;Data Source=66.90.104.49;Initial Catalog="  & DataBase & ";user ID=AXUsrWeb;password=AXUsrWeb#123AX0601gs;"
+			DBconn.open "Provider=SQLOLEDB;Data Source=72.34.240.168;Initial Catalog="  & DataBase & ";user ID=AXUsrWeb;password=AXUsrWeb#123ms1217*();"
+			blnconnectionDB = true
+		end if
+	End Sub
+
+
+	Sub closeDB()
+		if blnconnectionDB = true then
+			if IsObject(DBconn) and DBconn.State = 1 then
+				DBconn.close
+			end if  
+			blnconnectionDB = false
+		end if
+	End Sub
+%>

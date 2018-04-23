@@ -1,0 +1,43 @@
+<% @LANGUAGE="VBSCRIPT" %>
+<% Server.ScriptTimeout = 100 %>
+<%
+	Response.Expires = 0 
+	Response.Expiresabsolute = Now() - 1 
+	Response.AddHeader "pragma","no-cache" 
+	Response.AddHeader "cache-control","private" 
+	Response.CacheControl = "no-cache" 
+	Response.ContentType="text/html" 
+	Response.CharSet = "EUC-KR" 
+	Response.Buffer = false 'false일 경우 Server.Execute 실행시 헤더 오류 발생에 유의
+
+	Const admincheck = "AXMain" '관리자 로그인 체크 Cookies Array
+
+	Const savecheck = "AXMainAdmin" '관리자 아이디 저장 Cookies Array
+
+	Const AdminTitle = "본부 통합 관리자" '관리자 타이틀
+	
+	Const AdminRole = "본부" '관리자 구분(본부,본사,매장,충전소)
+
+	Const CompanyLogo = "../images/logo.gif"
+	
+	Const DefaultPage = "/$adm/Head/HeadList.asp"
+
+	Const LogoutReturnPage = "/$adm/login/loginForm.asp"
+	
+	Const HomePage = "http://72.34.240.168"
+	
+	Const HeadCode = "A;B;C;D;E;F;G;H;I;J;K;L;M;N;O;P;Q;R;S;T;U;V;W;X;Y;Z"
+
+	Const StartSalesDate = "9:00:00 AM"
+
+	Const EndSalesDate = "9:00:00 AM"
+
+	Dim Domain, SCRIPT_NAME, QUERY_STRING, ConnectPort 
+
+	Domain = Request.ServerVariables("Server_Name")
+	SCRIPT_NAME = Request.ServerVariables("SCRIPT_NAME")
+	SERVER_PORT = Request.ServerVariables("SERVER_PORT")
+	QUERY_STRING = Request.ServerVariables("QUERY_STRING")
+
+	ConnectPort = "7055" '접속포트
+%>
